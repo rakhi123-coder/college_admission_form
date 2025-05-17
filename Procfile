@@ -1,1 +1,1 @@
-web: gunicorn app:college-admission-form
+web: gunicorn app:app
