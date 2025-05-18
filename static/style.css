@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc') no-repeat center center fixed;
+    background: url('https://www.sainathuniversity.com/wp-content/themes/SaiNath-Uni/images/Slides/slide9.webp') no-repeat center center fixed;
     background-size: cover;
     padding: 20px;
 }
@@ -15,11 +15,12 @@ body {
 .form-container {
     max-width: 600px;
     margin: auto;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.97); /* subtle transparency */
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
+
 
 h2 {
     text-align: center;
@@ -62,8 +63,15 @@ form button:hover {
 }
 
 input[type="date"] {
-    background-color: yellow !important;
+  background-color: #fff !important; /* white background */
+  color: #000 !important;            /* black text */
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 
 
 .logo-container {
