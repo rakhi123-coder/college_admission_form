@@ -1,7 +1,15 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    background: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc') no-repeat center center fixed;
+    background-size: cover;
     padding: 20px;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    input[type="date"] {
+        color-scheme: light;
+    }
 }
 
 .form-container {
@@ -54,11 +62,45 @@ form button:hover {
 }
 
 input[type="date"] {
-    color: #000; /* Ensures text is visible */
-    background-color: #fff; /* Matches rest of the form */
-    border: 1px solid #ccc;
-    padding: 12px;
-    border-radius: 6px;
-    width: 100%;
-    box-sizing: border-box;
+    background-color: yellow !important;
+}
+
+
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo-container img {
+    height: 60px;
+    width: auto;
+}
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-content img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #047b4d;
 }
