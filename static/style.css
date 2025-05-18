@@ -52,3 +52,13 @@ form button:hover {
     text-align: center;
     font-weight: bold;
 }
+
+input[type="date"] {
+    color: #000; /* Ensures text is visible */
+    background-color: #fff; /* Matches rest of the form */
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
