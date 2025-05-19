@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Our College</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmWEIiyLX3K2I3HXFKuSmVrGsnep9TdkXg8g&s" alt="College Logo">
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="{{ url_for('register') }}">Register Student</a></li>
+            <li><a href="{{ url_for('view_students') }}">View All Students</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div class="main-content landing">
+        <section class="director-message">
+            <img src="https://www.sainathuniversity.com/wp-content/uploads/2022/02/voic-chanslar.jpg" alt="Director Photo" class="director-photo">
+            <div class="message-text">
+                <h1>Welcome to Sai Nath University, Ranchi</h1>
+                <p>
+                    At our institution, we believe in empowering students with knowledge and values. 
+                    We take pride in fostering a community of learning, innovation, and integrity.
+                </p>
+                <p><strong>– Prof. (Dr.) S.P.Agarwal, Vice Chancellor</strong></p>
+            </div>
+        </section>
+    </div>
+
+    {% include '_footer.html' %}
+</body>
+</html>

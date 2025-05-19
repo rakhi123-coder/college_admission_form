@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmWEIiyLX3K2I3HXFKuSmVrGsnep9TdkXg8g&s" alt="College Logo">
+    </div>
+    <h2 style="text-align:center; margin-top:20px;">Registered Students</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Course</th>
+                <th>Admission Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.full_name }}</td>
+                <td>{{ student.gender }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.phone }}</td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.admission_year }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include '_footer.html' %}
+</body>
+</html>
