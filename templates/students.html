@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
         table {
-            width: 90%;
+            width: 95%;
             margin: auto;
             border-collapse: collapse;
+            font-size: 14px;
         }
         th, td {
             padding: 10px;
@@ -19,29 +20,37 @@
 </head>
 <body>
     <div class="logo-container">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmWEIiyLX3K2I3HXFKuSmVrGsnep9TdkXg8g&s" alt="College Logo">
+        <a href="{{ url_for('home') }}">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmWEIiyLX3K2I3HXFKuSmVrGsnep9TdkXg8g&s" alt="College Logo">
+        </a>
     </div>
     <h2 style="text-align:center; margin-top:20px;">Registered Students</h2>
     <table>
         <thead>
             <tr>
-                <th>Full Name</th>
-                <th>Gender</th>
-                <th>Email</th>
+                <th>Name</th>
+                <th>DOB</th>
                 <th>Phone</th>
-                <th>Course</th>
-                <th>Admission Year</th>
+                <th>Email</th>
+                <th>Father</th>
+                <th>Mother</th>
+                <th>10th</th>
+                <th>12th</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             {% for student in students %}
             <tr>
-                <td>{{ student.full_name }}</td>
-                <td>{{ student.gender }}</td>
-                <td>{{ student.email }}</td>
+                <td>{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</td>
+                <td>{{ student.dob }}</td>
                 <td>{{ student.phone }}</td>
-                <td>{{ student.course }}</td>
-                <td>{{ student.admission_year }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.father_name }}</td>
+                <td>{{ student.mother_name }}</td>
+                <td>{{ student.marks_10th }}</td>
+                <td>{{ student.marks_12th }}</td>
+                <td><a href="{{ url_for('view_student', student_id=student._id) }}">View</a></td>
             </tr>
             {% endfor %}
         </tbody>

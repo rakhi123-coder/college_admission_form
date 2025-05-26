@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="{{ url_for('home') }}">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmWEIiyLX3K2I3HXFKuSmVrGsnep9TdkXg8g&s" alt="College Logo">
+        </a>
+    </div>
+    <div class="profile-container">
+        <h2>{{ student.first_name }} {{ student.middle_name }} {{ student.last_name }}</h2>
+        <p><strong>Date of Birth:</strong> {{ student.dob }}</p>
+        <p><strong>Phone:</strong> {{ student.phone }}</p>
+        <p><strong>Email:</strong> {{ student.email }}</p>
+
+        <p><strong>Father:</strong> {{ student.father_name }} ({{ student.father_occupation }}) - ₹{{ student.father_income }}</p>
+        <p><strong>Mother:</strong> {{ student.mother_name }} ({{ student.mother_occupation }}) - ₹{{ student.mother_income }}</p>
+
+        <p><strong>Permanent Address:</strong> {{ student.permanent_address }} - {{ student.pin_code }}</p>
+        <p><strong>Correspondence Address:</strong> {{ student.correspondence_address }}</p>
+        <p><strong>Caste:</strong> {{ student.caste }}</p>
+        <p><strong>Religion:</strong> {{ student.religion }}</p>
+
+        <p><strong>10th Marks:</strong> {{ student.marks_10th }}</p>
+        <p><strong>12th Marks:</strong> {{ student.marks_12th }}</p>
+
+        {% if student.photo_filename %}
+        <p><strong>Photo:</strong><br>
+            <img src="{{ url_for('static', filename='uploads/' + student.photo_filename) }}" alt="Student Photo">
+        </p>
+        {% endif %}
+
+        {% if student.caste_certificate_filename %}
+        <p><strong>Caste Certificate:</strong><br>
+            <a href="{{ url_for('static', filename='uploads/' + student.caste_certificate_filename) }}" target="_blank">View Caste Certificate</a>
+        </p>
+        {% endif %}
+
+        {% if student.residential_certificate_filename %}
+        <p><strong>Residential Certificate:</strong><br>
+            <a href="{{ url_for('static', filename='uploads/' + student.residential_certificate_filename) }}" target="_blank">View Residential Certificate</a>
+        </p>
+        {% endif %}
+        <br>
+    </div>
+    <br>
+    {% include '_footer.html' %}
+</body>
+</html>
